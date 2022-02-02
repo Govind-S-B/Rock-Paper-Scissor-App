@@ -5,4 +5,12 @@
     <string name="_5">5</string>
     <string name="rock">ROCK</string>
     <string name="rock_paper_scissor">ROCK PAPER SCISSOR</string>
+    <string name="w_d_l_0_0_0">W/D/L : 0/0/0</string>
+    <string name="round_1_7">ROUND : 1/7</string>
+    <string name="todo">TODO</string>
+    <string name="exit">EXIT</string>
+    <string name="textview">TextView</string>
+    <string name="w_d_l">W/D/L</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="hey_you_won_sorry_u_lost">Hey you won! / sorry u lost</string>
 </resources>
