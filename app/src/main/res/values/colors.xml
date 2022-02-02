@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Yellow_Primary">#FFEA00</color>
     <color name="Yellow_Secondary">#ffdd00</color>
+    <color name="Orange_Primary">#ff9500</color>
 </resources>

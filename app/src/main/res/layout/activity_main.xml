@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/rock_paper_scissor"
         android:textAlignment="textEnd"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/Orange_Primary"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,14 +41,17 @@
         android:layout_width="64dp"
         android:layout_height="71dp"
         android:layout_marginTop="68dp"
+        android:backgroundTint="@color/Orange_Primary"
         android:text="@string/_5"
+        android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button7"
@@ -56,12 +59,15 @@
         android:layout_height="71dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="80dp"
+        android:backgroundTint="@color/Orange_Primary"
         android:text="@string/_7"
+        android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button3"
@@ -69,11 +75,14 @@
         android:layout_height="71dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="68dp"
+        android:backgroundTint="@color/Orange_Primary"
         android:text="@string/_3"
+        android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
