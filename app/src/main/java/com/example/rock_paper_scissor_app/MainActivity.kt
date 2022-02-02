@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var input5 : Button
     private lateinit var input7 : Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,21 +30,21 @@ class MainActivity : AppCompatActivity() {
 
         input3.setOnClickListener {
             rounds = 3
-            intent.putExtra("score",rounds)
+            intent.putExtra("rounds",rounds)
             startActivity(intent)
             finish()
         }
 
         input5.setOnClickListener {
             rounds = 5
-            intent.putExtra("score",rounds)
+            intent.putExtra("rounds",rounds)
             startActivity(intent)
             finish()
         }
 
         input7.setOnClickListener {
             rounds = 7
-            intent.putExtra("score",rounds)
+            intent.putExtra("rounds",rounds)
             startActivity(intent)
             finish()
         }
