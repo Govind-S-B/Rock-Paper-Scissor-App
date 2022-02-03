@@ -47,7 +47,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/textview"
         android:textColor="@color/Orange_Primary"
-        android:textSize="28sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
