@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import nl.dionsegijn.konfetti.xml.KonfettiView
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.Position
+import nl.dionsegijn.konfetti.core.emitter.Emitter
+import java.util.concurrent.TimeUnit
 
 class Final : AppCompatActivity() {
 
@@ -14,6 +19,18 @@ class Final : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_final)
+
+        var viewKonfetti : KonfettiView = findViewById(R.id.konfettiView)
+
+        var party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
+            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100),
+            position = Position.Relative(0.5, 0.3)
+        )
 
         tryAgain = findViewById(R.id.button)
         exit = findViewById(R.id.button2)
@@ -39,6 +56,7 @@ class Final : AppCompatActivity() {
             else{
                 if(wonRounds > lostRounds){
                     result.text = "Yay you won!"
+                    viewKonfetti.start(party)
                 }
                 else{
                     result.text = "Sorry mate, you lost :<"
