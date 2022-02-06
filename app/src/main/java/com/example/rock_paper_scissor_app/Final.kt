@@ -16,6 +16,11 @@ class Final : AppCompatActivity() {
     private lateinit var tryAgain : Button
     private lateinit var exit : Button
 
+    private var rounds : Int = 0
+    private var wonRounds : Int = 0
+    private var drawRounds : Int = 0
+    private var lostRounds : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_final)
@@ -39,10 +44,19 @@ class Final : AppCompatActivity() {
         var score : TextView = findViewById(R.id.textView8)
 
 
-        var rounds = intent.getIntExtra("rounds",3)
-        var wonRounds = intent.getIntExtra("wonRounds",0)
-        var drawRounds = intent.getIntExtra("drawRounds",0)
-        var lostRounds = intent.getIntExtra("lostRounds",0)
+        rounds = intent.getIntExtra("rounds",3)
+        wonRounds = intent.getIntExtra("wonRounds",0)
+        drawRounds = intent.getIntExtra("drawRounds",0)
+        lostRounds = intent.getIntExtra("lostRounds",0)
+
+        if (savedInstanceState != null){
+            rounds = savedInstanceState.getInt("rounds")
+            wonRounds = savedInstanceState.getInt("wonRounds")
+            drawRounds = savedInstanceState.getInt("drawRounds")
+            lostRounds = savedInstanceState.getInt("lostRounds")
+        }
+
+
 
         score.text = "$wonRounds/$drawRounds/$lostRounds"
 
@@ -76,5 +90,13 @@ class Final : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putInt("rounds",rounds)
+        savedInstanceState.putInt("wonRounds",wonRounds)
+        savedInstanceState.putInt("drawRounds",drawRounds)
+        savedInstanceState.putInt("lostRounds",lostRounds)
+        super.onSaveInstanceState(savedInstanceState)
     }
 }
