@@ -8,7 +8,7 @@ Some things I experimented with that I found interesting :<br />
 *Trying out random<br />
 *Putting in an app icon<br />
 *Imagebuttons and using resource files such as colors strings themes<br />
-*Getting rid of the action bar and changing theme colors(status bar color was what I wanted to change)
-*Experimented a lot with github features
-*Adding external dependencies
-*Using onSaveInstance for data persistence within the same activity
+*Getting rid of the action bar and changing theme colors(status bar color was what I wanted to change)<br />
+*Experimented a lot with github features<br />
+*Adding external dependencies ; [Konfetti](https://github.com/DanielMartinus/Konfetti)<br />
+*Using onSaveInstance for data persistence within the same activity<br />
