@@ -3,7 +3,6 @@ package com.example.rock_paper_scissor_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 
@@ -22,7 +21,7 @@ class Game : AppCompatActivity() {
     private lateinit var scoreboard : TextView
     private lateinit var roundview : TextView
 
-    private var options = listOf<String>("rock","paper","scissor")
+    private var options = listOf("rock","paper","scissor")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +37,20 @@ class Game : AppCompatActivity() {
         roundview = findViewById(R.id.textView3)
 
         roundview.text = "ROUND : $currentRound/$rounds"
+
+        // setting value of things from save instance
+        if (savedInstanceState != null){
+            rounds = savedInstanceState.getInt("rounds")
+            currentRound = savedInstanceState.getInt("currentRound")
+            wonRounds = savedInstanceState.getInt("wonRounds")
+            drawRounds = savedInstanceState.getInt("drawRounds")
+            lostRounds = savedInstanceState.getInt("lostRounds")
+        }
+
+        // initial value setting to display
+        scoreboard.text = "W/D/L : $wonRounds/$drawRounds/$lostRounds"
+        roundview.text = "ROUND : $currentRound/$rounds"
+
 
         buttonListeners()
     }
@@ -115,5 +128,14 @@ class Game : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putInt("rounds",rounds)
+        savedInstanceState.putInt("currentRound",currentRound)
+        savedInstanceState.putInt("wonRounds",wonRounds)
+        savedInstanceState.putInt("drawRounds",drawRounds)
+        savedInstanceState.putInt("lostRounds",lostRounds)
+        super.onSaveInstanceState(savedInstanceState)
     }
 }
