@@ -35,11 +35,10 @@ jobs:
           uses: tubone24/update_release@v1.0
           env:
                GITHUB_TOKEN: ${{ github.token }}
-
-        - name: Upload Release Asset
-          uses: actions/upload-release-asset@v1
-          env:
-              GITHUB_TOKEN: ${{ secrets.github_token }}
+               
+        - name: Update release
+          uses: johnwbyrd/update-release@v1
           with:
-              upload_url: ${{ steps.update_release.outputs.upload_url }}
-              asset_path: ./RPS.apk
+              token: ${{ secrets.GITHUB_TOKEN }}
+              files: ./RPS.apk
+
