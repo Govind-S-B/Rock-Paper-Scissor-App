@@ -22,7 +22,7 @@ jobs:
               java-version: 1.8
 
         - name: Build application
-          run: ./gradelw buildDebug
+          run: ./gradlew buildDebug
 
         - name: Upload Artifact
           uses: actions/upload-artifact@v2
