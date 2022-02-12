@@ -30,9 +30,18 @@ jobs:
               name: Apk Build
               path: ./RPS.apk
                
-        - name: Update GitHub Release
-          uses: tubone24/update_release@v1.3.1
+        - name: update release
+          id: update_release
+          uses: tubone24/update_release@v1.0
+          env:
+            GITHUB_TOKEN: ${{ github.token }}
+            
+        - name: Upload Release Asset
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.github_token }}
           with:
-              token: ${{ secrets.GITHUB_TOKEN }}
-              files: ./RPS.apk
-
+            upload_url: ${{ steps.update_release.outputs.upload_url }}
+            asset_path: ./RPS.apk
+            asset_name: RPS.apk
+            asset_content_type: ${{ matrix.asset_content_type }}
