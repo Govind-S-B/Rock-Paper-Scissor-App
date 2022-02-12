@@ -44,4 +44,4 @@ jobs:
             upload_url: ${{ steps.update_release.outputs.upload_url }}
             asset_path: ./RPS.apk
             asset_name: RPS.apk
-            asset_content_type: ${{ matrix.asset_content_type }}
+            asset_content_type: application/octet-stream
