@@ -36,8 +36,8 @@ jobs:
           env:
                GITHUB_TOKEN: ${{ github.token }}
                
-        - name: Update release
-          uses: johnwbyrd/update-release@v1
+        - name: Update GitHub Release
+          uses: tubone24/update_release@v1.3.1
           with:
               token: ${{ secrets.GITHUB_TOKEN }}
               files: ./RPS.apk
