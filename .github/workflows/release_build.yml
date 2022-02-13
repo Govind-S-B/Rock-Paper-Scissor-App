@@ -28,7 +28,7 @@ jobs:
           
         - name: Running commands
           run: |
-            dir ./
+            dir /bin
             dir ./app     
             dir ./app/build/     
             dir ./app/build/outputs/
