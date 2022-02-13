@@ -4,8 +4,6 @@ on:
   release:
     types: [created]
     branches: [main]
-  schedule:
-    - cron: 10 * * * *
 
 jobs:
     build:
@@ -26,11 +24,26 @@ jobs:
         - name: Build application
           run: ./gradlew buildDebug
           
-        - name: Running commands
-          run: |
-            dir /bin
-            dir ./app     
-            dir ./app/build/     
-            dir ./app/build/outputs/
-            dir ./app/build/outputs/apk/
-            dir ./app/build/outputs/apk/debug/
+          # Find where the goddamn build file is saved at , i cant find it FFS
+          
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v2
+          with:
+              name: Apk Build
+              path: ./app/build/outputs/apk/debug/app-debug.apk
+               
+        - name: update release
+          id: update_release
+          uses: tubone24/update_release@v1.0
+          env:
+            GITHUB_TOKEN: ${{ github.token }}
+            
+        - name: Upload Release Asset
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.github_token }}
+          with:
+            upload_url: ${{ steps.update_release.outputs.upload_url }}
+            asset_path: ./app/build/outputs/apk/debug/app-debug.apk
+            asset_name: RPS.apk
+            asset_content_type: application/octet-stream
