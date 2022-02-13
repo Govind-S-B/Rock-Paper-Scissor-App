@@ -29,4 +29,8 @@ jobs:
         - name: Running commands
           run: |
             dir ./
-            echo dir ./
+            dir ./app     
+            dir ./app/build/     
+            dir ./app/build/outputs/
+            dir ./app/build/outputs/apk/
+            dir ./app/build/outputs/apk/debug/
