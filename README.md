@@ -12,3 +12,4 @@ Some things I experimented with that I found interesting :<br />
 *Experimented a lot with github features<br />
 *Adding external dependencies ; [Konfetti](https://github.com/DanielMartinus/Konfetti)<br />
 *Using onSaveInstance for data persistence within the same activity<br />
+*Experimented a lot with github actions and workflows
