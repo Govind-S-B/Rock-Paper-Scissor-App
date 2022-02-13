@@ -24,6 +24,7 @@ jobs:
         - name: Build application
           run: ./gradlew buildDebug
           
-        - name: Test Commands
-        - run: echo hello
-        - run: dir
+        - name: Running commands
+          run: |
+            dir ./
+            echo dir ./
